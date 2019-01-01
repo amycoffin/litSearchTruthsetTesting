@@ -5,7 +5,7 @@ The 2 truth set files (one for BRCA1, one for BRCA2) contain LOVD literature dat
 
 A 3rd file, labeled exampleLitSearchOutput can be used as a 3rd argument (arg 2) for the main module, litSearchVsTruthSet, to test LitSearch output against the truthset. Use this example output file to model any new LitSearch output to be used accurately in litSearchVsTruthSet, which can then be used as a new 3rd argument. 
 
-Outputof litSearchVsTruthSet: a pubs dictionary (in its own outPubs.py file) and performance stats (printed in terminal). 
+Output of litSearchVsTruthSet: a pubs dictionary (in its own outPubs.py file), performance stats (printed in terminal), and a missedVars array (in its own missedVars.py file) that contains dictionaries ([{PMID: (variantalias1, variantalias2...)}, ...]) that are the truthset=True litSearchOutput=false subset of pubs. 
 
 Use the resulting pubs data structure to interrogate any PMID of your choice. Pubs data structure is provided below: 
 
