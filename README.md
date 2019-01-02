@@ -12,3 +12,7 @@ Use the resulting pubs data structure to interrogate any PMID of your choice. Pu
 pubs = {'PMID': { ('variantalias1', 'variantalias2', ...) : {'inMunchOutput': boolean, 'inTruthSet': boolean} }, 'PMID':{():{}}, ...  }
 
 import pubs from outPubs.py to utilize this summary data in a new script
+
+command to run:
+
+python litSearchVsTruthSet.py Brca1LOVDTruthSet.tab Brca2LOVDTruthSet.tab exampleLitSearchOutput.txt
