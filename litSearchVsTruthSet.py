@@ -2,25 +2,35 @@
 # Updated January 2, 2019
 
 """
-Tests the output of any version of LitSearch/pubMunch (provided it is in the appropriate format) to produce a dictionary data structure, stored as an object "pubs" in file outPubs.py. 
+Tests the output of any version of LitSearch/pubMunch (provided it is in the appropriate format) to produce a dictionary 
+data structure, stored as an object "pubs" in file outPubs.py. 
 Found variant aliases are stored together as a single tuple objec, which represents a single variant.  
 The pubs dictionary takes on the following structure:
-pubs = {'PMID': { ('variantalias1', 'variantalias2', ...) : {'inMunchOutput': boolean, 'inTruthSet': boolean} }, 'PMID':{():{}}, ...  }
-This structure can be used to research performance based on specific PMIDs, and is also used to provide performance statistics.  
-stats is a function run on pubs just prior to the file being written to outPubs.py, which prints performance information about 
-pubMunch compared to the truth sets provided. 
+pubs = {'PMID': { ('variantalias1', 'variantalias2', ...) : {'inMunchOutput': boolean, 'inTruthSet': boolean} }, 
+'PMID':{():{}}, ...  }
+This structure can be used to research performance based on specific PMIDs, and is also used to provide performance 
+statistics.  
+stats is a function run on pubs just prior to the file being written to outPubs.py, which prints performance information 
+about pubMunch compared to the truth sets provided. 
 
-pubs is passed to all functions, obtaining more information with each function run. disabling functions or changing the order in which they are run 
-may create false data. 
+pubs is passed to all functions, obtaining more information with each function run. disabling functions or changing 
+the order in which they are run may create false data. 
 
-variable names such as pcol and vcol are used to refer to PMID column, and variant columns (where any aliases of all types are found) respectively.
+variable names such as pcol and vcol are used to refer to PMID column, and variant columns (where any aliases of all 
+types are found) respectively.
 pcol does NOT refer to protein identifier columns 
 variant columns are searched using cPatternList and pPatternList.
-cPatternList corresponds with regexes associated with cDNA nomenclature, while pPatternList uses regexes that correspond with unusual protein nomenclature
-patternLists were compiled to interrogate specific regexes that were used to improve PubMunch, and do not reflect all regexes used in PubMunch/LitSearch
+cPatternList corresponds with regexes associated with cDNA nomenclature, while pPatternList uses regexes that 
+correspond with unusual protein nomenclature
+patternLists were compiled to interrogate specific regexes that were used to improve PubMunch, so they do NOT
+reflect all regexes used in PubMunch/LitSearch
 
-To alter the columns interrogated in truthset or pubMunchOutput files, refer to load functions (loadLovdBRCA1, loadLovdBRCA2, loadMunch) 
-and change arguments associated with truthSet (designed for LOVD truth sets) and munchOut (designed for a specific format of LitSearch/PubMunch output). 
+patternLists should be updated according to which regexes you are trying to ensure are working properly, per the truth set
+
+To alter the columns interrogated in truthset or pubMunchOutput files, refer to load functions 
+(loadLovdBRCA1, loadLovdBRCA2, loadMunch) 
+and change arguments associated with truthSet (designed for LOVD truth sets) 
+and munchOut (designed for a specific format of LitSearch/PubMunch output). 
 """
 
 import sys
